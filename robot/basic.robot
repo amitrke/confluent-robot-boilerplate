@@ -8,9 +8,6 @@ My First Robot Test
     Log To Console            Hello Robot World!
 
 Verify Topics
-    ${group_id}=  Create Consumer  server=broker
-    ${topics}=  List Topics  ${group_id}
-    Log To Console  ${topics}
-    ${producer_group_id}=  Create Producer
-    Produce  group_id=${producer_group_id}  topic=Topic1  value={'test': 1}
-    Flush  group_id=${producer_group_id}
+    ${producer_group_id}=  Create Producer  server=broker  port=29092
+    Produce  group_id=${producer_group_id}  topic=Topic1 message={"key": "value"}
+    Wait Until Keyword Succeeds  10x  0.5s  All Messages Are Delivered  ${producer_group_id}
