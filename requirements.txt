@@ -1,1 +1,3 @@
 robotframework
+confluent-kafka
+robotframework-confluentkafkalibrary
