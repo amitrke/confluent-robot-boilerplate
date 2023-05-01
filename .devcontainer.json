@@ -12,6 +12,7 @@
                 "jeppeandersen.vscode-kafka",
                 "ms-azuretools.vscode-docker",
                 "eamodio.gitlens",
+                "humao.rest-client",
                 "GitHub.copilot"
             ]
         }
